@@ -21,7 +21,7 @@ export default () => {
     };
 
     useEffect(() => {
-        searchApi('pasta');
+        searchApi('temaki');
     }, []);
 
     return [searchApi, results, errorMessage]
