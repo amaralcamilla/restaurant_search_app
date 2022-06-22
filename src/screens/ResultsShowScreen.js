@@ -21,8 +21,10 @@ const ResultsShowScreen = ({navigation}) => {
     }
 
     return (
-        <View>
-            <Text>{result.name}</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>{result.name}</Text>
+            <Text style={styles.info}>Price: {result.price}</Text>
+            <Text style={styles.info}>Rating: {result.rating} | Reviews: {result.review_count}</Text>
             <FlatList
                 data={result.photos}
                 keyExtractor={(photo) => photo}
@@ -34,9 +36,25 @@ const ResultsShowScreen = ({navigation}) => {
     )
 }
 const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF'
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        alignSelf: "flex-start",
+        marginTop: 15,
+        marginLeft: 15
+    },
+    info: {
+        alignSelf: "flex-start",
+        marginLeft: 15
+    },
     image: {
         width: 320,
-        height: 220
+        height: 220,
+        margin: 6
     }
 });
 
